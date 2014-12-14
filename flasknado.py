@@ -10,12 +10,6 @@ from tornado.web import Application, FallbackHandler
 from tornado.websocket import WebSocketHandler
 from tornado.ioloop import IOLoop
 
-class Server(Application):
-    def __init__(self):
-        handlers = [(r'/websocket', WebSocket)]
-        settings = dict()
-        Application.__init__(self, handlers, settings)
-
 class WebSocket(WebSocketHandler):
     def open(self):
         print("Socket opened.")
